@@ -3,6 +3,8 @@ wagtail-schema.org
 ==================
 
 Add Schema.org JSON-LD to your website
+This version is a fork of https://github.com/takeflight/wagtail-schema.org and the Wagtail 2 compatible equivalent of https://pypi.org/project/wagtail-schema.org/
+
 
 Installing
 ==========
@@ -11,7 +13,7 @@ Install using pip:
 
 .. code-block:: console
 
-    $ pip install wagtail-schema.org
+    $ pip install git+https://github.com/nhsuk/wagtail-schema.org
 
 Add it to your ``INSTALLED_APPS`` to use the Django template tags:
 
@@ -91,9 +93,9 @@ Use ``{% ld_for_object page %}`` to print these.
 .. code-block:: python
 
     from django.db import models
-    from wagtail.wagtailadmin.edit_handlers import FieldPanel
-    from wagtail.wagtailcore.models import Page
-    from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
+    from wagtail.admin.edit_handlers import FieldPanel
+    from wagtail.core.models import Page
+    from wagtail.images.edit_handlers import ImageChooserPanel
 
     from testapp.models import TestOrganisation
     from wagtailschemaorg.models import PageLDMixin
